@@ -1,0 +1,138 @@
+<div class="grid-container">
+    <p>Fields required for input are marked with <span style="color: red">*required</span></p>
+  <mat-card >
+    <mat-card-header>
+      <mat-toolbar  class="header-title">New Customer Sign-Up</mat-toolbar>
+    </mat-card-header>
+    <mat-card-content class="dashboard-card-content" >
+      <form #userForm="ngForm" class="example-form" >
+        <div>
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Email: <span style="color: red">(required)</span></mat-label>
+            <input matInput placeholder="Email" [(formControl)]="emailControl">
+            <mat-error *ngIf="emailControl.hasError('email') && !emailControl.hasError('required')">
+              Please enter a valid email address
+            </mat-error>
+            <mat-error *ngIf="emailControl.hasError('required')">
+              Email is <strong>required</strong>
+            </mat-error>
+          </mat-form-field> 
+        </div>
+        <div style="clear:both;"></div>
+        <div class="left">
+          <mat-form-field appearance="outline" class="float-input">
+            <mat-label>First Name:</mat-label>
+            <input matInput placeholder="First Name" name="firstName" [(formControl)]="firstNameControl">
+          </mat-form-field>
+        </div>
+        <div class="right">
+          <mat-form-field appearance="outline" class="float-input">
+            <mat-label>Last Name:</mat-label>
+            <input matInput placeholder="Last Name" name="lastName" [(formControl)]="lastNameControl">
+          </mat-form-field>
+        </div>
+        <div style="clear:both;"></div>
+        <div>
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Company Name:</mat-label>
+            <input matInput placeholder="Company Name" name="companyName" [(formControl)]="companyNameControl">
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Address: <span style="color: red">(required)</span></mat-label>
+            <input matInput placeholder="Address" name="address" [(formControl)]="addressControl">
+            <mat-error *ngIf="addressControl.hasError('required')">
+              Address is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>City: <span style="color: red">(required)</span></mat-label>
+            <input matInput placeholder="City" name="city" [(formControl)]="cityControl">
+            <mat-error *ngIf="cityControl.hasError('required')">
+              City is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+          </div>
+          <div>
+            <mat-form-field appearance="outline" class="full-width">
+              <mat-label>Province: <span style="color: red">(required)</span></mat-label>
+              <input matInput placeholder="Province" name="province" [(formControl)]="provinceControl">
+              <mat-error *ngIf="provinceControl.hasError('required')">
+                Province is <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div>
+            <mat-form-field appearance="outline" class="full-width">
+              <mat-label>Postal: <span style="color: red">(required)</span></mat-label>
+              <input matInput placeholder="Postal" name="postal" [(formControl)]="postalControl">
+              <mat-error *ngIf="postalControl.hasError('required')">
+                Postal is <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div class="left">
+            <mat-form-field appearance="outline" class="float-input">
+              <mat-label>Phone1: <span style="color: red">(required)</span></mat-label>
+              <input matInput placeholder="Phone1" name="phone1" [(formControl)]="phone1Control">
+              <mat-error *ngIf="phone1Control.hasError('required')">
+                Phone 1 is <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div class="right">
+            <mat-form-field appearance="outline" class="float-input">
+              <mat-select placeholder="Phone1 Type" name="phone1Type" [(formControl)]="phone1TypeControl">
+                <mat-option *ngFor="let phoneType of phoneTypes" value="phoneType.index">
+                  {{ phoneType }}
+                </mat-option>
+              </mat-select>
+              <mat-error *ngIf="phone1TypeControl.hasError('required')">
+                Phone 1 Type is <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div style="clear:both;"></div>
+          <div class="left">
+            <mat-form-field appearance="outline" class="float-input">
+              <mat-label>Phone2:</mat-label>
+              <input matInput placeholder="Phone2" [(formControl)]="phone2Control">
+            </mat-form-field>
+          </div>
+          <div class="right">
+            <mat-form-field appearance="outline" class="float-input">
+              <mat-select placeholder="Phone2 Type" name="phone2Type" [(formControl)]="phone2TypeControl">
+                <mat-option *ngFor="let phoneType of phoneTypes" value="phoneType.index">
+                  {{ phoneType }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div style="clear:both;"></div>
+          <div class="left">
+            <mat-form-field appearance="outline" class="float-input">
+              <mat-label>Phone3:</mat-label>
+              <input matInput placeholder="Phone3" [(formControl)]="phone3Control" > 
+              
+            </mat-form-field>
+          </div>
+          <div class="right">
+            <mat-form-field appearance="outline" class="float-input" >
+              <mat-select placeholder="Phone3 Type"  name="phone3Type" [(formControl)]="phone3TypeControl">
+                <mat-option *ngFor="let phoneType of phoneTypes" value="phoneType.index">{{ phoneType }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        <div style="clear:both;"></div>
+        <br >
+        <button mat-stroked-button [disabled]='userForm.form.invalid' style="margin-right:2%" color="primary" (click)="openDialog()" >Sign Up</button>
+        <button mat-stroked-button>Cancel</button>
+      </form> 
+    </mat-card-content>
+  </mat-card>
+</div> 
+
