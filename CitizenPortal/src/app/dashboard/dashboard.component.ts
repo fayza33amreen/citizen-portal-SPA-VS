@@ -1,8 +1,8 @@
-import { Component } from '@angular/core';
-import { map } from 'rxjs/operators';
 import { Breakpoints, BreakpointState, BreakpointObserver } from '@angular/cdk/layout';
+import { Component } from '@angular/core';
 import { Customer } from '../customer';
 import { FormControl, Validators } from '@angular/forms';
+import { map } from 'rxjs/operators';
 import { MatDialog } from '@angular/material';
 import { SignUpDialogComponent } from '../sign-up-dialog/sign-up-dialog.component';
 
