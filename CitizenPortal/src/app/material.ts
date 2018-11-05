@@ -11,7 +11,10 @@ import {
     MatToolbarModule, 
     MatSidenavModule, 
     MatListModule,
-    MatFormFieldModule } from '@angular/material';    
+    MatTableModule,
+    MatFormFieldModule
+} from '@angular/material';
+//import { MatTableModule } from '@angular/material/table';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
@@ -27,6 +30,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
         MatSidenavModule,
         MatSelectModule,
         MatListModule,
+        MatTableModule,
         FormsModule,
         ReactiveFormsModule,
         MatFormFieldModule
@@ -43,6 +47,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
         MatButtonModule,
         MatToolbarModule,
         MatSidenavModule,
+        MatTableModule,
         MatSelectModule,
         MatListModule,
         FormsModule,

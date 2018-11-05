@@ -1,0 +1,84 @@
+.grid-container {
+  margin: 20px;
+  width: 95%;
+  margin: 0 auto;
+  padding-top: 2em;
+}
+
+.dashboard-card {
+  position: absolute;
+  margin: 0 auto;
+  left: 15px;
+  right: 15px;
+  padding-bottom: 50px;
+}
+
+.header-title {
+  position: absolute;
+  background-color: #5290C2;
+  color: white;
+  right: 0px;
+  top: 0px;
+}
+.within-header-title {
+  height: initial;
+  background-color: #377BB9;
+  font-weight: normal;
+  font-size: medium;
+}
+
+.dashboard-card-content {
+  padding-top: 50px;
+}
+
+.table-overflow {
+  overflow-x:auto;
+}
+.form-feild-card {
+  margin-bottom: 10px;
+  padding-top: 50px;
+}
+
+input[type=text], [type=email] {
+  width: 47%;
+}
+
+
+.left, .right {
+  float: left;
+  width: 50%;
+}
+
+.input-height {
+  height: 5px !important;
+}
+
+
+.left input[type=text] {
+  width: 98%;
+}
+
+.right input[type=text] {
+  width: 98%;
+}
+
+select {
+  width: 98%;
+  height: 22px;
+}
+
+.example-form {
+  width: 100% !important;
+}
+
+.full-width {
+  width: 98.5%;
+}
+
+.required-field {
+  border-color: brown !important;
+}
+
+.align-right {
+  text-align: right;
+}

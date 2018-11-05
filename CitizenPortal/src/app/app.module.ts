@@ -10,6 +10,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SignUpDialogComponent } from './sign-up-dialog/sign-up-dialog.component';
 import { UserService } from './services/user.service';
+import { PeopleComponent } from './people/people.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { UserService } from './services/user.service';
     AppComponent,
     DashboardComponent,
     NavbarComponent,
-    SignUpDialogComponent
+    SignUpDialogComponent,
+    PeopleComponent
   ],
 
   imports: [
