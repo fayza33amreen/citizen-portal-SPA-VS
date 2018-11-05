@@ -12,7 +12,7 @@ const httpOptions = {
 
 export class UserService {
 
-  private _url: string = "https://demo.randomaccess.ca/Amanda/API_FW/Services/ServiceMain.svc/json/getPeople";
+  private _url: string = "http://demo.randomaccess.ca/Amanda/API_FW/Services/ServiceMain.svc/json/getPeople";
   constructor(private http: HttpClient) { }
 
   getResponse() {
