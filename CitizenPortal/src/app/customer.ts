@@ -17,7 +17,5 @@ export class Customer {
         public phone3Tpe: string,
         public securityQues: string,
         public answer: string
-
-
     ){}
 }

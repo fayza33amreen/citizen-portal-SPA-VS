@@ -4,64 +4,112 @@
       <mat-toolbar class="header-title">People</mat-toolbar>
     </mat-card-header>
     <mat-card-content class="dashboard-card-content">
-      
+      <div *ngIf></div>
       <mat-card class="form-feild-card">
         <mat-card-header>
-          <mat-toolbar class="header-title within-header-title">Region of Waterloo ()</mat-toolbar>
+          <mat-toolbar class="header-title within-header-title">Personal Info</mat-toolbar>
         </mat-card-header>
 
         <mat-card-content class="table-overflow">
           <table style="table-layout:fixed; width: 100%">
             <ng-container>
               <tr>
-                <td width="30%" class="align-right">
-                  <mat-label>Contact </mat-label>
-                  <mat-form-field appearance="outline" style="width: 88%">
-                    <input matInput>
+                <td width="50%" class="align-right">
+                  <mat-label>Email </mat-label>
+                  <mat-form-field appearance="outline" style="width: 86%">
+                    <input matInput value={{people?.emailAddress}}>
                   </mat-form-field>
                 </td>
-                <td width="15%" class="align-right">
-                  <mat-label>Phone </mat-label>
-                  <mat-form-field appearance="outline" style="width: 80%">
-                    <input matInput>
-                  </mat-form-field>
-                </td>
-                <td width="12%" class="align-right">
-                  <mat-label>Type </mat-label>
-                  <mat-form-field appearance="outline" style="width: 75%">
-                    <input matInput>
-                  </mat-form-field>
-                </td>
-                <td width="13%" class="align-right">
-                  <mat-label>Row ID </mat-label>
-                  <mat-form-field appearance="outline" style="width: 65%">
-                    <input matInput>
+                <td width="50%" class="align-right">
+                  <mat-label>Org </mat-label>
+                  <mat-form-field appearance="outline" style="width: 86%">
+                    <input matInput value={{people?.organizationName}}>
                   </mat-form-field>
                 </td>
               </tr>
               <tr>
-                <td width="30%" class="align-right">
-                  <mat-label>Org </mat-label>
-                  <mat-form-field appearance="outline" style="width: 88%">
-                    <input matInput>
+                <td width="50%" class="align-right">
+                  <mat-label>First Name </mat-label>
+                  <mat-form-field appearance="outline" style="width: 86%">
+                    <input matInput value={{people?.nameFirst}}>
                   </mat-form-field>
                 </td>
-                <td width="15%" class="align-right">
-                  <mat-label>Email </mat-label>
-                  <mat-form-field appearance="outline" style="width: 80%">
-                    <input matInput>
+                <td width="50%" class="align-right">
+                  <mat-label>Last Name </mat-label>
+                  <mat-form-field appearance="outline" style="width: 86%">
+                    <input matInput value={{people?.nameLast}}>
                   </mat-form-field>
                 </td>
-                <td width="12%" class="align-right">
+              </tr>
+              <tr>
+                <td width="50%" class="align-right">
+                  <mat-label>Phone 1 </mat-label>
+                  <mat-form-field appearance="outline" style="width: 86%">
+                    <input matInput value={{people?.phone1}}>
+                  </mat-form-field>
+                </td>
+                <td width="50%" class="align-right">
+                  <mat-label>Phone 1 Type </mat-label>
+                  <mat-form-field appearance="outline" style="width: 86%">
+                    <mat-select [(value)] ="setValue">
+                      <mat-option value="setValue">
+                        {{people?.phone1Desc}}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </td>
+              </tr>
+              <tr>
+                <td width="50%" class="align-right">
+                  <mat-label>Phone 2 </mat-label>
+                  <mat-form-field appearance="outline" style="width: 86%">
+                    <input matInput value={{people?.phone2}}>
+                  </mat-form-field>
+                </td>
+                <td width="50%" class="align-right">
+                  <mat-label>Phone 2 Type </mat-label>
+                  <mat-form-field appearance="outline" style="width: 86%">
+                    <mat-select [(value)]="setValue">
+                      <mat-option value="setValue">
+                        {{people?.phone2Desc}}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </td>
+              </tr>
+              <tr>
+                <td width="50%" class="align-right">
+                  <mat-label>Phone 3 </mat-label>
+                  <mat-form-field appearance="outline" style="width: 86%">
+                    <input matInput value={{people?.phone3}}>
+                  </mat-form-field>
+                </td>
+                <td width="50%" class="align-right">
+                  <mat-label>Phone 3 Type </mat-label>
+                  <mat-form-field appearance="outline" style="width: 86%">
+                    <mat-select [(value)]="setValue">
+                      <mat-option value="setValue">
+                        {{people?.phone3Desc}}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </td>
+              </tr>
+              <tr>
+                <td width="50%" class="align-right">
+                  <mat-label>Customer Type </mat-label>
+                  <mat-form-field appearance="outline" style="width: 86%">
+                    <mat-select [(value)]="setValue">
+                      <mat-option value="setValue">
+                        {{people?.peopleDesc}}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </td>
+                <td width="50%" class="align-right">
                   <mat-label>Status </mat-label>
-                  <mat-form-field appearance="outline" style="width: 75%">
-                    <input matInput>
-                  </mat-form-field>
-                </td>
-                <td width="13%" class="align-right">
-                  <mat-label>Parent ID </mat-label>
-                  <mat-form-field appearance="outline" style="width: 65%">
-                    <input matInput class="input-height">
+                  <mat-form-field appearance="outline" style="width: 86%">
+                    <input matInput value={{people?.statusCode}}>
                   </mat-form-field>
                 </td>
               </tr>
@@ -81,7 +129,7 @@
                 <td colspan="3" class="align-right">
                   <mat-label>Add. Prefix </mat-label>
                   <mat-form-field appearance="outline" style="width: 90.5%">
-                    <input matInput>
+                    <input matInput value={{people?.addrePrefix}}>
                   </mat-form-field>
                 </td>
               </tr>
@@ -90,14 +138,15 @@
                 <td width="25%" class="align-right">
                   <mat-label>Street# </mat-label>
                   <mat-form-field appearance="outline" style="width: 71%">
-                    <input matInput>
+                    <input matInput value={{people?.addrHouse}}>
                   </mat-form-field>
                 </td>
                 <td width="25%" class="align-right">
                   <mat-label>Unit Type </mat-label>
                   <mat-form-field appearance="outline" style="width: 70%">
-                    <mat-select>
-                      <mat-option>
+                    <mat-select [(value)]="setValue">
+                      <mat-option value="setValue">
+                        {{people?.addrUnitType}}
                       </mat-option>
                     </mat-select>
                   </mat-form-field>
@@ -105,7 +154,7 @@
                 <td width="25%" class="align-right">
                   <mat-label>Unit# </mat-label>
                   <mat-form-field appearance="outline" style="width: 72%">
-                    <input matInput>
+                    <input matInput value={{people?.addrUnit}}>
                   </mat-form-field>
                 </td>
                 <td width="25%"></td>
@@ -115,21 +164,21 @@
                 <td width="25%" class="align-right">
                   <mat-label>Street Name </mat-label>
                   <mat-form-field appearance="outline" style="width: 71%">
-                    <input matInput>
+                    <input matInput value={{people?.addrStreet}}>
                   </mat-form-field>
                 </td>
                 <td width="25%" class="align-right">
                   <mat-label>Prefix </mat-label>
                   <mat-form-field appearance="outline" style="width: 70%">
-                    <input matInput>
+                    <input matInput value={{people?.addrStreetPrefix}}>
                   </mat-form-field>
                 </td>
                 <td width="25%" class="align-right">
                   <mat-label>Type </mat-label>
-                  <mat-form-field appearance="outline" style="width: 72%">
-                    
-                    <mat-select>
-                      <mat-option>
+                  <mat-form-field appearance="outline" style="width: 72%">                 
+                    <mat-select [(value)]="setValue">
+                      <mat-option value="setValue">
+                        {{people?.addrStreetType}}
                       </mat-option>
                     </mat-select>
                   </mat-form-field>
@@ -137,7 +186,7 @@
                 <td width="25%" class="align-right">
                   <mat-label>Direction </mat-label>
                   <mat-form-field appearance="outline" style="width: 71%">
-                    <input matInput>
+                    <input matInput value={{people?.addrStreetDirection}}>
                   </mat-form-field>
                 </td>
               </tr>
@@ -146,22 +195,23 @@
                 <td width="25%" class="align-right">
                   <mat-label>City </mat-label>
                   <mat-form-field appearance="outline" style="width: 71%">
-                    <mat-select>
-                      <mat-option>
+                    <mat-select [(value)]="setValue">
+                      <mat-option value="setValue">
+                        {{people?.addrCity}}
                       </mat-option>
                     </mat-select>
                   </mat-form-field>
                 </td>
                 <td width="25%" class="align-right">
-                  <mat-label>Country </mat-label>
+                  <mat-label>County </mat-label>
                   <mat-form-field appearance="outline" style="width: 70%">
-                    <input matInput>
+                    <input matInput value={{people?.addrCountry}}>
                   </mat-form-field>
                 </td>
                 <td width="25%" class="align-right">
                   <mat-label>Community </mat-label>
                   <mat-form-field appearance="outline" style="width: 72%">
-                    <input matInput>
+                    <input matInput value={{people?.community}}>
                   </mat-form-field>
                 </td>
                 <td width="25%"></td>
@@ -171,14 +221,15 @@
                 <td width="25%" class="align-right">
                   <mat-label>Postal Code </mat-label>
                   <mat-form-field appearance="outline" style="width: 71%">
-                    <input matInput>
+                    <input matInput value={{people?.addrPostal}}>
                   </mat-form-field>
                 </td>
                 <td width="25%" class="align-right">
                   <mat-label>Province </mat-label>
                   <mat-form-field appearance="outline" style="width: 70%">
-                    <mat-select>
-                      <mat-option>
+                    <mat-select [(value)]="setValue">
+                      <mat-option value="setValue">
+                        {{people?.addrProvince}}
                       </mat-option>
                     </mat-select>
                   </mat-form-field>
@@ -186,8 +237,9 @@
                 <td width="25%" class="align-right">
                   <mat-label>Country </mat-label>
                   <mat-form-field appearance="outline" style="width: 72%">
-                    <mat-select>
-                      <mat-option>
+                    <mat-select [(value)]="setValue">
+                      <mat-option value="setValue">
+                        {{people?.addrCountry}}
                       </mat-option>
                     </mat-select>
                   </mat-form-field>
@@ -211,7 +263,7 @@
                 <td class="align-right">
                   <mat-label>Line 1 </mat-label>
                   <mat-form-field appearance="outline" style="width: 90.5%">
-                    <input matInput>
+                    <input matInput value={{people?.addressLine1}}>
                   </mat-form-field>
                 </td>
               </tr>
@@ -219,7 +271,7 @@
                 <td width="100%" class="align-right">
                   <mat-label>Line 2 </mat-label>
                   <mat-form-field appearance="outline" style="width: 90.5%">
-                    <input matInput>
+                    <input matInput value={{people?.addressLine2}}>
                   </mat-form-field>
                 </td>
               </tr>
@@ -227,7 +279,7 @@
                 <td class="align-right">
                   <mat-label>Line 3 </mat-label>
                   <mat-form-field appearance="outline" style="width: 90.5%">
-                    <input matInput>
+                    <input matInput value={{people?.addressLine3}}>
                   </mat-form-field>
                 </td>
               </tr>
@@ -235,7 +287,7 @@
                 <td width="100%" class="align-right">
                   <mat-label>Line 4 </mat-label>
                   <mat-form-field appearance="outline" style="width: 90.5%">
-                    <input matInput>
+                    <input matInput value={{people?.addressLine4}}>
                   </mat-form-field>
                 </td>
               </tr>
@@ -243,7 +295,7 @@
                 <td class="align-right">
                   <mat-label>Line 5 </mat-label>
                   <mat-form-field appearance="outline" style="width: 90.5%">
-                    <input matInput>
+                    <input matInput value={{people?.addressLine5}}>
                   </mat-form-field>
                 </td>
               </tr>
@@ -251,7 +303,7 @@
                 <td width="100%" class="align-right">
                   <mat-label>Line 6 </mat-label>
                   <mat-form-field appearance="outline" style="width: 90.5%">
-                    <input matInput>
+                    <input matInput value={{people?.addressLine6}}>
                   </mat-form-field>
                 </td>
               </tr>
