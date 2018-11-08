@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
+import { FlexLayoutModule } from '@angular/flex-layout';
 import { MaterialModule } from './material'
 
 import { AppComponent } from './app.component';
@@ -11,6 +12,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { SignUpDialogComponent } from './sign-up-dialog/sign-up-dialog.component';
 import { UserService } from './services/user.service';
 import { PeopleComponent } from './people/people.component';
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
@@ -19,7 +21,8 @@ import { PeopleComponent } from './people/people.component';
     DashboardComponent,
     NavbarComponent,
     SignUpDialogComponent,
-    PeopleComponent
+    PeopleComponent,
+    LoginComponent
   ],
 
   imports: [

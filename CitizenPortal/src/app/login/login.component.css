@@ -1,0 +1,38 @@
+.grid-container {
+  margin: 20px;
+  width: 95%;
+  margin: 0 auto;
+  margin-top: 2em;
+  padding-top: 2em;
+  height: 80%;
+  background-color: white;
+}
+
+.login-card {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.login-card-content {
+  padding-top: 5em;
+}
+
+.header-title {
+  position: absolute;
+  background-color: #5290C2;
+  color: white;
+  right: 0px;
+  top: 0px;
+  font: lighter;
+}
+
+
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}

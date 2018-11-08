@@ -1,10 +1,25 @@
 <mat-sidenav-container class="sidenav-container">
   <mat-sidenav-content>
-    <mat-toolbar>
-      <span>citizen-portal</span>
+    
+    <mat-toolbar class="top-bar">
+      <span class="fill-remaining-space"></span>
+      <span><a href="#">FEEDBACK</a></span>
+      <span><a href="#">TRANSLATE</a></span>
     </mat-toolbar>
-    <!-- Add Content Here -->
-    <!--<app-dashboard></app-dashboard>-->
-    <app-people></app-people>
+
+    <mat-toolbar class="lower-bar">
+      <span>
+        <img [src]="imagePath" alt="Logo">
+      </span>
+      <span class="fill-remaining-space"></span>
+      <span><a href="#">Apply,Register and Pay</a></span>
+      <span><a href="#">Parks, Recreation and Culture</a></span>
+      <span><a href="#">Build, Invest and Grow</a></span>
+      <span><a href="#">Learn About</a></span>
+      <span><a href="#">Your City</a></span>
+      <span><a href="#">How Do I?</a></span>
+    </mat-toolbar>
+    <!--<app-people></app-people>-->
+    <app-login></app-login>
   </mat-sidenav-content>
 </mat-sidenav-container>

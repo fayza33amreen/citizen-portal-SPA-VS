@@ -7,6 +7,42 @@
 }
 
 .mat-toolbar.mat-primary {
-  position: sticky;
+  
+  background-color: white;
+  color: black;
   top: 0;
+}
+
+.fill-remaining-space {
+  flex: 1 1 auto !important;
+}
+
+.top-bar {
+  float: left;
+  background-color: black;
+  color: white;
+  height: 30px;
+}
+
+
+.lower-bar {
+  background-color: white;
+  color: darkblue;
+  height: 55px;
+}
+
+a {
+  padding-right: 1em;
+  text-decoration: none;
+}
+.top-bar a {
+  color: white;
+  text-transform: uppercase;
+  font-weight: lighter;
+  font-size:small;
+}
+
+.lower-bar a {
+  font-weight: lighter;
+  font-size: medium;
 }

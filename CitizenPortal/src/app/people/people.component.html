@@ -4,7 +4,7 @@
       <mat-toolbar class="header-title">People</mat-toolbar>
     </mat-card-header>
     <mat-card-content class="dashboard-card-content">
-      <div *ngIf></div>
+      <!--<div *ngIf></div>-->
       <mat-card class="form-feild-card">
         <mat-card-header>
           <mat-toolbar class="header-title within-header-title">Personal Info</mat-toolbar>
@@ -69,8 +69,8 @@
                 <td width="50%" class="align-right">
                   <mat-label>Phone 2 Type </mat-label>
                   <mat-form-field appearance="outline" style="width: 86%">
-                    <mat-select [(value)]="setValue">
-                      <mat-option value="setValue">
+                    <mat-select [formControl]="ctrl">
+                      <mat-option value="Fax">
                         {{people?.phone2Desc}}
                       </mat-option>
                     </mat-select>
