@@ -2,6 +2,7 @@
   <mat-card class="login-card">
     <mat-card-header>
       <mat-toolbar class="header-title">Login</mat-toolbar>
+      <hr />
     </mat-card-header>
 
     <mat-card-content class="login-card-content">
@@ -12,6 +13,11 @@
         <mat-form-field class="example-full-width">
           <input matInput type="password" placeholder="Password">
         </mat-form-field>
+        <mat-toolbar class="button-row">
+          <span class="fill-remaining-space"></span>
+          <a href="#" class="btnStack">Login</a>
+          <a routerLink="/dashboard" class="btnStack">Registration</a>
+        </mat-toolbar>
       </form>
     </mat-card-content>
   </mat-card>
