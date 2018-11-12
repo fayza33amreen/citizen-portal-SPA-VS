@@ -6,7 +6,7 @@ import { MaterialModule } from './material'
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule, routingComponents } from './app-routing.module';
-import { DashboardComponent } from './dashboard/dashboard.component';
+import { RegistrationComponent } from './registration/registration.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SignUpDialogComponent } from './sign-up-dialog/sign-up-dialog.component';
 import { UserService } from './services/user.service';
@@ -17,7 +17,7 @@ import { LoginComponent } from './login/login.component';
 @NgModule({
   declarations: [
     AppComponent,
-    DashboardComponent,
+    RegistrationComponent,
     NavbarComponent,
     SignUpDialogComponent,
     PeopleComponent,
@@ -33,7 +33,7 @@ import { LoginComponent } from './login/login.component';
   ],
 
   entryComponents: [
-    DashboardComponent,
+    RegistrationComponent,
     SignUpDialogComponent
   ],
 

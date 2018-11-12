@@ -1,26 +1,58 @@
 import { Breakpoints, BreakpointState, BreakpointObserver } from '@angular/cdk/layout';
 import { Component } from '@angular/core';
 import { Customer } from '../customer';
-import { FormControl, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators, FormsModule, NgForm } from '@angular/forms';  
 import { map } from 'rxjs/operators';
 import { MatDialog } from '@angular/material';
 import { SignUpDialogComponent } from '../sign-up-dialog/sign-up-dialog.component';
 
 @Component({
-  selector: 'app-dashboard',
-  templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.css']
+  selector: 'app-registration',
+  templateUrl: './registration.component.html',
+  styleUrls: ['./registration.component.css']
 })
-export class DashboardComponent {
+
+export class RegistrationComponent
+{
+
+  regiForm: FormGroup;  
   phoneTypes = ['Mobile Phone', 'Land Phone'];
   phone3TypeDisable = false;
+
+
+  constructor(public form: FormBuilder)
+  {
+    this.regiForm = form.group({  
+        'addressControl' : [null, Validators.required],  
+        'cityControl' : [null, Validators.required],  
+        'provinceControl' : [null, Validators.compose([Validators.required, Validators.minLength(30), Validators.maxLength(500)])],  
+        'postalControl' : [null, Validators.required],  
+        'phone1Control':[null, Validators.required],  
+        'phone1TypeControl':[null, Validators.required],  
+        'emailControl':[null, Validators.compose([Validators.required, Validators.email])],  
+        'IsAccepted':[null]  
+  }
+
+  // On Change event of Toggle Button  
+  onChange(event:any)  
+    {  
+      if (event.checked == true) {  
+        this.IsAccepted = 1;  
+      } else {  
+        this.IsAccepted = 0;  
+      }  
+    }  
   
-  constructor(public dialog: MatDialog){}
+    // Executed When Form Is Submitted  
+    onFormSubmit(form:NgForm)  
+    {  
+      console.log(form);  
+    }  
+  /*constructor(public dialog: MatDialog){}
     openDialog(): void {
       let dialogRef = this.dialog.open(SignUpDialogComponent, {
       });
-    }
-
+    }*/
     
   emailControl = new FormControl('', [
     Validators.required,
