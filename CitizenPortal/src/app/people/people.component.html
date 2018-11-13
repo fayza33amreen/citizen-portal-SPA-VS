@@ -1,3 +1,5 @@
+<app-navbar></app-navbar>
+
 <div class="grid-container">
   <mat-card>
     <mat-card-header>
@@ -51,7 +53,7 @@
                 <td width="50%" class="align-right">
                   <mat-label>Phone 1 Type </mat-label>
                   <mat-form-field appearance="outline" style="width: 86%">
-                    <mat-select [(value)] ="setValue">
+                    <mat-select [(value)]="setValue">
                       <mat-option value="setValue">
                         {{people?.phone1Desc}}
                       </mat-option>
@@ -118,7 +120,7 @@
         </mat-card-content>
       </mat-card>
 
-      <mat-card  class="form-feild-card">
+      <mat-card class="form-feild-card">
         <mat-card-header>
           <mat-toolbar class="header-title within-header-title">Address</mat-toolbar>
         </mat-card-header>
@@ -175,7 +177,7 @@
                 </td>
                 <td width="25%" class="align-right">
                   <mat-label>Type </mat-label>
-                  <mat-form-field appearance="outline" style="width: 72%">                 
+                  <mat-form-field appearance="outline" style="width: 72%">
                     <mat-select [(value)]="setValue">
                       <mat-option value="setValue">
                         {{people?.addrStreetType}}
@@ -251,7 +253,7 @@
           </table>
         </mat-card-content>
       </mat-card>
-      
+
       <mat-card class="form-feild-card">
         <mat-card-header>
           <mat-toolbar class="header-title within-header-title">Free Form Address</mat-toolbar>

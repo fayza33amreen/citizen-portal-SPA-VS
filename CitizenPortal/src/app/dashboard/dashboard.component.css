@@ -1,0 +1,36 @@
+.sidenav-container {
+  height: 12%;
+}
+
+
+.fill-remaining-space {
+  flex: 1 1 auto !important;
+}
+
+.top-bar {
+  float: left;
+  background-color: #4B81BD;
+  color: white;
+  height: 50px;
+}
+
+
+.top-bar a {
+  color: white;
+  padding-right: .5em;
+  padding-left: .5em;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: lighter;
+  font-size: small;
+}
+
+.grid-container {
+  
+  width: 100%;
+  margin: 0 auto;
+}
+
+.panel {
+  margin-top: 20px;
+}

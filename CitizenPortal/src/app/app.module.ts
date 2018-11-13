@@ -12,6 +12,7 @@ import { SignUpDialogComponent } from './sign-up-dialog/sign-up-dialog.component
 import { UserService } from './services/user.service';
 import { PeopleComponent } from './people/people.component';
 import { LoginComponent } from './login/login.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { LoginComponent } from './login/login.component';
     NavbarComponent,
     SignUpDialogComponent,
     PeopleComponent,
-    LoginComponent
+    LoginComponent,
+    DashboardComponent
   ],
 
   imports: [

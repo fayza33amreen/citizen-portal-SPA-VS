@@ -22,25 +22,25 @@ export class RegistrationComponent
 
   constructor(public form: FormBuilder)
   {
-    this.regiForm = form.group({  
-        'addressControl' : [null, Validators.required],  
-        'cityControl' : [null, Validators.required],  
-        'provinceControl' : [null, Validators.compose([Validators.required, Validators.minLength(30), Validators.maxLength(500)])],  
-        'postalControl' : [null, Validators.required],  
-        'phone1Control':[null, Validators.required],  
-        'phone1TypeControl':[null, Validators.required],  
-        'emailControl':[null, Validators.compose([Validators.required, Validators.email])],  
-        'IsAccepted':[null]  
+    //this.regiForm = form.group({  
+    //    'addressControl' : [null, Validators.required],  
+    //    'cityControl' : [null, Validators.required],  
+    //    'provinceControl' : [null, Validators.compose([Validators.required, Validators.minLength(30), Validators.maxLength(500)])],  
+    //    'postalControl' : [null, Validators.required],  
+    //    'phone1Control':[null, Validators.required],  
+    //    'phone1TypeControl':[null, Validators.required],  
+    //    'emailControl':[null, Validators.compose([Validators.required, Validators.email])],  
+    //    'IsAccepted':[null]  
   }
 
   // On Change event of Toggle Button  
   onChange(event:any)  
     {  
-      if (event.checked == true) {  
-        this.IsAccepted = 1;  
-      } else {  
-        this.IsAccepted = 0;  
-      }  
+      //if (event.checked == true) {  
+      //  this.IsAccepted = 1;  
+      //} else {  
+      //  this.IsAccepted = 0;  
+      //}  
     }  
   
     // Executed When Form Is Submitted  
