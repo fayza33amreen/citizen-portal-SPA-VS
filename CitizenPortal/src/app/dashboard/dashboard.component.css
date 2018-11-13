@@ -28,9 +28,14 @@
 .grid-container {
   
   width: 100%;
-  margin: 0 auto;
+  margin: 0 px;
 }
 
 .panel {
   margin-top: 20px;
+  width: 95%;
+}
+
+mat-grid-tile {
+  align-items: stretch ;
 }

@@ -13,12 +13,12 @@
   <mat-toolbar>Dashboard of John</mat-toolbar>
   <div>
     <mat-grid-list cols="3" rowHeight="2:1" color="lightblue">
-      <mat-grid-tile>
-        <mat-accordion>
-          <mat-expansion-panel class="panel">
+      <mat-grid-tile >
+        <mat-accordion class="panel">
+          <mat-expansion-panel>
             <mat-expansion-panel-header>
               <mat-panel-title>
-                Personal data
+                Customer
               </mat-panel-title>
               <mat-panel-description>
                 Type your name and age
@@ -36,12 +36,12 @@
         </mat-accordion>
       </mat-grid-tile>
       <mat-grid-tile>
-        <mat-accordion>
+        <mat-accordion  class="panel">
           <mat-expansion-panel (opened)="panelOpenState = true"
-                               (closed)="panelOpenState = false" class="panel">
+                               (closed)="panelOpenState = false">
             <mat-expansion-panel-header>
               <mat-panel-title>
-                Self aware panel
+                Corporate Customer
               </mat-panel-title>
               <mat-panel-description>
                 Currently I am {{panelOpenState ? 'open' : 'closed'}}
@@ -53,12 +53,12 @@
       </mat-grid-tile>
 
       <mat-grid-tile>
-        <mat-accordion>
+        <mat-accordion class="panel">
           <mat-expansion-panel (opened)="panelOpenState = true"
-                               (closed)="panelOpenState = false" class="panel">
+                               (closed)="panelOpenState = false">
             <mat-expansion-panel-header>
               <mat-panel-title>
-                Self aware panel
+                Account
               </mat-panel-title>
               <mat-panel-description>
                 Currently I am {{panelOpenState ? 'open' : 'closed'}}
