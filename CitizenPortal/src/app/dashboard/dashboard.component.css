@@ -39,3 +39,7 @@
 mat-grid-tile {
   align-items: stretch ;
 }
+
+::ng-deep .mat-grid-list .mat-figure {
+  align-items: flex-start !important;
+}

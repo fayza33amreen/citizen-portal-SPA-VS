@@ -13,7 +13,7 @@
   <mat-toolbar>Dashboard of John</mat-toolbar>
   <div>
     <mat-grid-list cols="3" rowHeight="2:1" color="lightblue">
-      <mat-grid-tile >
+      <mat-grid-tile>
         <mat-accordion class="panel">
           <mat-expansion-panel>
             <mat-expansion-panel-header>
@@ -24,11 +24,9 @@
                 Type your name and age
               </mat-panel-description>
             </mat-expansion-panel-header>
-
             <mat-form-field>
               <input matInput placeholder="First name">
             </mat-form-field>
-
             <mat-form-field>
               <input matInput placeholder="Age">
             </mat-form-field>
@@ -36,7 +34,7 @@
         </mat-accordion>
       </mat-grid-tile>
       <mat-grid-tile>
-        <mat-accordion  class="panel">
+        <mat-accordion class="panel">
           <mat-expansion-panel (opened)="panelOpenState = true"
                                (closed)="panelOpenState = false">
             <mat-expansion-panel-header>
@@ -51,7 +49,22 @@
           </mat-expansion-panel>
         </mat-accordion>
       </mat-grid-tile>
-
+      <mat-grid-tile>
+        <mat-accordion class="panel">
+          <mat-expansion-panel (opened)="panelOpenState = true"
+                               (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Account
+              </mat-panel-title>
+              <mat-panel-description>
+                Currently I am {{panelOpenState ? 'open' : 'closed'}}
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <p>I'm visible because I am open</p>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </mat-grid-tile>
       <mat-grid-tile>
         <mat-accordion class="panel">
           <mat-expansion-panel (opened)="panelOpenState = true"
@@ -69,7 +82,5 @@
         </mat-accordion>
       </mat-grid-tile>
     </mat-grid-list>
-    
-    
   </div>
 </div>
