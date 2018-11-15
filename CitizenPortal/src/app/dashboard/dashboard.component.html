@@ -15,8 +15,8 @@
     <mat-grid-list cols="3" rowHeight="2:1" color="lightblue">
       <mat-grid-tile>
         <mat-accordion class="panel">
-          <mat-expansion-panel>
-            <mat-expansion-panel-header>
+          <mat-expansion-panel class="expansion-panel">
+            <mat-expansion-panel-header class="panel-header" [collapsedHeight]="'48px'" [expandedHeight]="'52px'">
               <mat-panel-title>
                 Customer
               </mat-panel-title>
@@ -24,20 +24,18 @@
                 Type your name and age
               </mat-panel-description>
             </mat-expansion-panel-header>
-            <mat-form-field>
-              <input matInput placeholder="First name">
-            </mat-form-field>
-            <mat-form-field>
-              <input matInput placeholder="Age">
-            </mat-form-field>
+            <div class="panel-content">
+              <p>I'm visible because I am open</p>
+              <hr />
+            </div>
           </mat-expansion-panel>
         </mat-accordion>
       </mat-grid-tile>
       <mat-grid-tile>
         <mat-accordion class="panel">
           <mat-expansion-panel (opened)="panelOpenState = true"
-                               (closed)="panelOpenState = false">
-            <mat-expansion-panel-header>
+                               (closed)="panelOpenState = false" class="expansion-panel">
+            <mat-expansion-panel-header class="panel-header"  [collapsedHeight]="'48px'" [expandedHeight]="'52px'">
               <mat-panel-title>
                 Corporate Customer
               </mat-panel-title>
@@ -45,15 +43,18 @@
                 Currently I am {{panelOpenState ? 'open' : 'closed'}}
               </mat-panel-description>
             </mat-expansion-panel-header>
-            <p>I'm visible because I am open</p>
+            <div class="panel-content">
+              <p>I'm visible because I am open</p>
+              <hr />
+            </div>
           </mat-expansion-panel>
         </mat-accordion>
       </mat-grid-tile>
       <mat-grid-tile>
         <mat-accordion class="panel">
           <mat-expansion-panel (opened)="panelOpenState = true"
-                               (closed)="panelOpenState = false">
-            <mat-expansion-panel-header>
+                               (closed)="panelOpenState = false" class="expansion-panel">
+            <mat-expansion-panel-header class="panel-header"  [collapsedHeight]="'48px'" [expandedHeight]="'52px'">
               <mat-panel-title>
                 Account
               </mat-panel-title>
@@ -61,15 +62,18 @@
                 Currently I am {{panelOpenState ? 'open' : 'closed'}}
               </mat-panel-description>
             </mat-expansion-panel-header>
-            <p>I'm visible because I am open</p>
+            <div class="panel-content">
+              <p>I'm visible because I am open</p>
+              <hr />
+            </div>
           </mat-expansion-panel>
         </mat-accordion>
       </mat-grid-tile>
       <mat-grid-tile>
         <mat-accordion class="panel">
           <mat-expansion-panel (opened)="panelOpenState = true"
-                               (closed)="panelOpenState = false">
-            <mat-expansion-panel-header>
+                               (closed)="panelOpenState = false" class="expansion-panel">
+            <mat-expansion-panel-header class="panel-header"  [collapsedHeight]="'48px'" [expandedHeight]="'52px'">
               <mat-panel-title>
                 Account
               </mat-panel-title>
@@ -77,7 +81,10 @@
                 Currently I am {{panelOpenState ? 'open' : 'closed'}}
               </mat-panel-description>
             </mat-expansion-panel-header>
-            <p>I'm visible because I am open</p>
+            <div class="panel-content">
+              <p>I'm visible because I am open</p>
+              <hr />
+            </div>
           </mat-expansion-panel>
         </mat-accordion>
       </mat-grid-tile>

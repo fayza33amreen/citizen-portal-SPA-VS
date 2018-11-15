@@ -43,3 +43,15 @@ mat-grid-tile {
 ::ng-deep .mat-grid-list .mat-figure {
   align-items: flex-start !important;
 }
+
+.panel-header {
+  border-bottom: 1px solid rgba(0,0,0,.05);
+  height: 48px !important;
+}
+
+.panel-content {
+  margin-top: 15px;
+}
+.expansion-panel {
+  border-top: 1px solid #4B81BD;
+}
