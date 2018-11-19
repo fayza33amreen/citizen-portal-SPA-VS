@@ -1,6 +1,6 @@
 <mat-sidenav-container class="sidenav-container">
   <mat-sidenav-content>
-    <mat-toolbar class="top-bar">
+    <mat-toolbar class="top-bar gradient-light-blue-cyan">
       <span class="fill-remaining-space"></span>
       <span><a href="#">Profile</a></span>
       <span><a href="#">John Doe</a></span>
@@ -12,16 +12,16 @@
 <div class="grid-container">
   <mat-toolbar>Dashboard of John</mat-toolbar>
   <div>
-    <mat-grid-list cols="3" rowHeight="2:1" color="lightblue">
-      <mat-grid-tile>
+    <mat-grid-list cols="3" [rowHeight]="'4:1'">
+      <mat-grid-tile [rowspan]="row1Span">
         <mat-accordion class="panel">
-          <mat-expansion-panel class="expansion-panel">
+          <mat-expansion-panel (opened)="panelStateOpen1()"
+                               (closed)="panelStateClose1()" class="expansion-panel">
             <mat-expansion-panel-header class="panel-header" [collapsedHeight]="'48px'" [expandedHeight]="'52px'">
               <mat-panel-title>
                 Customer
               </mat-panel-title>
               <mat-panel-description>
-                Type your name and age
               </mat-panel-description>
             </mat-expansion-panel-header>
             <div class="panel-content">
@@ -31,16 +31,16 @@
           </mat-expansion-panel>
         </mat-accordion>
       </mat-grid-tile>
-      <mat-grid-tile>
+      <mat-grid-tile [rowspan]="row1Span">
         <mat-accordion class="panel">
-          <mat-expansion-panel (opened)="panelOpenState = true"
-                               (closed)="panelOpenState = false" class="expansion-panel">
-            <mat-expansion-panel-header class="panel-header"  [collapsedHeight]="'48px'" [expandedHeight]="'52px'">
+          <mat-expansion-panel (opened)="panelStateOpen1()"
+                               (closed)="panelStateClose1()" class="expansion-panel">
+            <mat-expansion-panel-header class="panel-header" [collapsedHeight]="'48px'" [expandedHeight]="'52px'">
               <mat-panel-title>
                 Corporate Customer
               </mat-panel-title>
               <mat-panel-description>
-                Currently I am {{panelOpenState ? 'open' : 'closed'}}
+                Currently I am {{'"panelState"' ? 'open' : 'closed'}}
               </mat-panel-description>
             </mat-expansion-panel-header>
             <div class="panel-content">
@@ -50,11 +50,11 @@
           </mat-expansion-panel>
         </mat-accordion>
       </mat-grid-tile>
-      <mat-grid-tile>
+      <mat-grid-tile [rowspan]="row1Span">
         <mat-accordion class="panel">
-          <mat-expansion-panel (opened)="panelOpenState = true"
-                               (closed)="panelOpenState = false" class="expansion-panel">
-            <mat-expansion-panel-header class="panel-header"  [collapsedHeight]="'48px'" [expandedHeight]="'52px'">
+          <mat-expansion-panel (opened)="panelStateOpen1()"
+                               (closed)="panelStateClose1()" class="expansion-panel">
+            <mat-expansion-panel-header class="panel-header" [collapsedHeight]="'48px'" [expandedHeight]="'52px'">
               <mat-panel-title>
                 Account
               </mat-panel-title>
@@ -69,11 +69,112 @@
           </mat-expansion-panel>
         </mat-accordion>
       </mat-grid-tile>
-      <mat-grid-tile>
+    </mat-grid-list>
+  </div>
+  <div>
+    <mat-grid-list cols="3" [rowHeight]="'4:1'">
+      <mat-grid-tile [rowspan]="row2Span">
         <mat-accordion class="panel">
-          <mat-expansion-panel (opened)="panelOpenState = true"
-                               (closed)="panelOpenState = false" class="expansion-panel">
-            <mat-expansion-panel-header class="panel-header"  [collapsedHeight]="'48px'" [expandedHeight]="'52px'">
+          <mat-expansion-panel (opened)="panelStateOpen2()"
+                               (closed)="panelStateClose2()" class="expansion-panel">
+            <mat-expansion-panel-header class="panel-header" [collapsedHeight]="'48px'" [expandedHeight]="'52px'">
+              <mat-panel-title>
+                Boo
+              </mat-panel-title>
+              <mat-panel-description>
+                Type your name and age
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <div class="panel-content">
+              <p>I'm visible because I am open</p>
+              <hr />
+            </div>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </mat-grid-tile>
+      <mat-grid-tile [rowspan]="row2Span">
+        <mat-accordion class="panel">
+          <mat-expansion-panel (opened)="panelStateOpen2()"
+                               (closed)="panelStateClose2()" class="expansion-panel">
+            <mat-expansion-panel-header class="panel-header" [collapsedHeight]="'48px'" [expandedHeight]="'52px'">
+              <mat-panel-title>
+                Corporate Customer
+              </mat-panel-title>
+              <mat-panel-description>
+                Currently I am {{'"panelState"' ? 'open' : 'closed'}}
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <div class="panel-content">
+              <p>I'm visible because I am open</p>
+              <hr />
+            </div>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </mat-grid-tile>
+      <mat-grid-tile [rowspan]="row2Span">
+        <mat-accordion class="panel">
+          <mat-expansion-panel (opened)="panelStateOpen2()"
+                               (closed)="panelStateClose2()" class="expansion-panel">
+            <mat-expansion-panel-header class="panel-header" [collapsedHeight]="'48px'" [expandedHeight]="'52px'">
+              <mat-panel-title>
+                Account
+              </mat-panel-title>
+              <mat-panel-description>
+                Currently I am {{panelOpenState ? 'open' : 'closed'}}
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <div class="panel-content">
+              <p>I'm visible because I am open</p>
+              <hr />
+            </div>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </mat-grid-tile>
+    </mat-grid-list>
+    <mat-grid-list cols="3" [rowHeight]="'4:1'">
+      <mat-grid-tile [rowspan]="row2Span">
+        <mat-accordion class="panel">
+          <mat-expansion-panel (opened)="panelStateOpen2()"
+                               (closed)="panelStateClose2()" class="expansion-panel">
+            <mat-expansion-panel-header class="panel-header" [collapsedHeight]="'48px'" [expandedHeight]="'52px'">
+              <mat-panel-title>
+                User
+              </mat-panel-title>
+              <mat-panel-description>
+                Type your name and age
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <div class="panel-content">
+              <p>I'm visible because I am open</p>
+              <hr />
+            </div>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </mat-grid-tile>
+      <mat-grid-tile [rowspan]="row2Span">
+        <mat-accordion class="panel">
+          <mat-expansion-panel (opened)="panelStateOpen2()"
+                               (closed)="panelStateClose2()" class="expansion-panel">
+            <mat-expansion-panel-header class="panel-header" [collapsedHeight]="'48px'" [expandedHeight]="'52px'">
+              <mat-panel-title>
+                Corporate Customer
+              </mat-panel-title>
+              <mat-panel-description>
+                Currently I am {{'"panelState"' ? 'open' : 'closed'}}
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <div class="panel-content">
+              <p>I'm visible because I am open</p>
+              <hr />
+            </div>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </mat-grid-tile>
+      <mat-grid-tile [rowspan]="row2Span">
+        <mat-accordion class="panel">
+          <mat-expansion-panel (opened)="panelStateOpen2()"
+                               (closed)="panelStateClose2()" class="expansion-panel">
+            <mat-expansion-panel-header class="panel-header" [collapsedHeight]="'48px'" [expandedHeight]="'52px'">
               <mat-panel-title>
                 Account
               </mat-panel-title>
