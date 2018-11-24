@@ -4,4 +4,5 @@ html, body { height: 100%; }
 body {
   margin: 0;
   font-family: 'Comic Sans MS', sans-serif;
+  font: 16px;
 }

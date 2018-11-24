@@ -1,28 +1,87 @@
 <mat-sidenav-container class="sidenav-container">
   <mat-sidenav-content>
-    <mat-toolbar class="top-bar">
-      <span class="fill-remaining-space"></span>
-      <span><a href="#">FEEDBACK</a></span>
-      <span><a href="#">TRANSLATE</a></span>
-    </mat-toolbar>
+    <nav class="top-bar">
+      <div class="ic-container-fluid">
+        <span class="fill-remaining-space"></span>
+        <span><a id="feedback" href="#">FEEDBACK</a></span>
+        <div id="translate">
+          <span><a href="#">TRANSLATE</a></span>
+        </div>
+      </div>
+    </nav>
 
-    <mat-toolbar class="lower-bar">
-      <span>
-        <img [src]="imagePath" alt="Logo">
-      </span>
-      <span class="fill-remaining-space"></span>
-      <span><a href="#">Apply, Register and Pay</a></span>
-      <!--<div class="vl"></div>-->
-      <span><a href="#">Parks, Recreation and Culture</a></span>
-      <!--<div class="vl"></div>-->
-      <span><a href="#">Build, Invest and Grow</a></span>
-      <!--<div class="vl"></div>-->
-      <span><a href="#">Learn About</a></span>
-      <!--<div class="vl"></div>-->
-      <span><a href="#">Your City</a></span>
-      <!--<div class="vl"></div>-->
-      <span><a href="#">How Do I?</a></span>
-    </mat-toolbar>
+    <div id="inner-header" class="ic-container-fluid">
+      <div id="header-left">
+        <div id="logo" title="View Our Homepage">
+          <a href="#" title="Click to Go Back Home">
+            <img [src]="imagePath" alt="City of Cambridge Logo"/>
+          </a>
+        </div>
+      </div>
+      <div id="header-right">
+        <nav id="main-nav">
+          <ul id="nav">
+            <li id="navTab01">
+              <a title="View our Apply, Register and Pay" href="#">
+                Apply, Register
+                <br />
+                and Pay
+              </a>
+            </li>
+            <!--<li id="navTab02">
+              <a title="View our Parks, Recreation and Culture" href="#">
+                Parks, Recreation
+                <br />
+                and Culture
+              </a>
+            </li>
+            <li id="navTab03">
+              <a title="View our Build, Invest and Grow" href="#">
+                Build, Invest
+                <br />
+                and Grow
+              </a>
+            </li>
+            <li id="navTab04">
+              <a title="View our Learn About" href="#">
+                Learn About
+              </a>
+            </li>
+            <li id="navTab05">
+              <a title="View our Your City" href="#">
+                Your City
+              </a>
+            </li>
+            <li id="navTab06">
+              <a title="View our How Do I?" href="#">
+                How Do I?
+              </a>
+            </li>-->
+          </ul>
+        </nav>
+
+      </div>
+
+    </div>
+    <!--<mat-toolbar class="lower-bar">
+      
+        <span>
+          <img [src]="imagePath" alt="Logo">
+        </span>
+        <span class="fill-remaining-space"></span>
+        <span><a href="#">Apply, Register and Pay</a></span>
+     
+        <span><a href="#">Parks, Recreation and Culture</a></span>
+    
+        <span><a href="#">Build, Invest and Grow</a></span>
+     
+        <span><a href="#">Learn About</a></span>
+      
+        <span><a href="#">Your City</a></span>
+        
+        <span><a href="#">How Do I?</a></span>
+      
+    </mat-toolbar>-->
   </mat-sidenav-content>
 </mat-sidenav-container>
 
