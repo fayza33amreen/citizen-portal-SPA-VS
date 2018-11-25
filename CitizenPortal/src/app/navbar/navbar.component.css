@@ -72,12 +72,18 @@ a {
   #inner-header {
     display: table;
     background-color: transparent;
+    padding: 1rem 0 1rem 0;
   }
 
-  #log {
-    margin: .5rem 2rem .5rem 0;
+  #logo {
+    margin: .25rem 0 .25rem 0;
   }
-
+  #logo img{
+    width: 305px;
+    height: auto;
+    max-height: 100%;
+    vertical-align: middle;
+  }
   #main-nav {
     position: relative;
     display: block !important;
@@ -87,23 +93,7 @@ a {
   }
 }
 
-  #navTab01 {
-
-  }
-  #navTab02 {
-  }
-  #navTab03 {
-  }
-  #navTab04 {
-  }
-  #navTab05 {
-  }
-
-  #navTab06 {
-  }
-
-/*@media (min-width: 991px)*/ 
-  #header-left {
+#header-left {
     display: table-cell;
     vertical-align: middle;
   }
@@ -113,28 +103,31 @@ a {
     vertical-align: middle;
   }
 
-  #nav {
-    display: table;
-    table-layout: fixed;
-    font-size: 0;
-    border-bottom: none;
-    margin: 0;
-    padding-left: 0;
-    width: 100%;
-    list-style: none;
-  }
+ul#nav {
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+  list-style: none;
+  margin-top: 1rem;
+}
 
-   #nav ul li {
+ul#nav li {
     display: table-cell;
-    /*border-width: 0 1px;*/
     line-height: 1.25;
-    /*color: #0078ae;*/
     border: solid #d3d3d3;
-    border-width: 1px 0 0;
+    border-width: 0 0 0 1px;
+    color: #0078ae !important;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.25;
+    background-color: transparent;
   }
-
-li a {
-  padding: 2.5rem .675rem 0;
+  ul#nav li:first-child {
+    border-right-color: transparent;
+    border-left-color: transparent;
+  }
+#nav a {
+  padding: 4.25rem .675rem 0;
   min-height: 80px;
   text-align: center;
   background-position: center top;
@@ -148,6 +141,29 @@ li a {
 }
 
 
+li#navTab01 a {
+  background: url('../../assets/images/navIcon_01.svg') center top no-repeat;
+}
+
+#navTab02 {
+  background: url('../../assets/images/navIcon_02.svg') center top no-repeat;
+}
+
+#navTab03 {
+  background: url('../../assets/images/navIcon_03.svg') center top no-repeat;
+}
+
+#navTab04 {
+  background: url('../../assets/images/navIcon_04.svg') center top no-repeat;
+}
+
+#navTab05 {
+  background: url('../../assets/images/navIcon_05.svg') center top no-repeat;
+}
+
+#navTab06 {
+  background: url('../../assets/images/navIcon_06.svg') center top no-repeat;
+}
 /*.lower-bar {
   background-color: white;
   color: darkblue;
