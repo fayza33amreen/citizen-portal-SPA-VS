@@ -17,6 +17,8 @@ export class RegistrationComponent
 
   regiForm: FormGroup;  
   phoneTypes = ['Mobile Phone', 'Land Phone'];
+  customerTypes = ['customer type 1', 'customer type 2'];
+  securityQuestions = ['security question 1', 'security question 2'];
   phone3TypeDisable = false;
 
 
@@ -63,7 +65,7 @@ export class RegistrationComponent
         this.emailControl.hasError('email') ? 'Not a valid email' :
             '';
   }
-
+  customerTypeControl = new FormControl('');
   firstNameControl = new FormControl('', );
   lastNameControl = new FormControl('', );
   companyNameControl = new FormControl('', );
@@ -90,6 +92,8 @@ export class RegistrationComponent
   phone2TypeControl = new FormControl();
   phone3Control = new FormControl();
   phone3TypeControl = new FormControl();
+  securityQuestionControl = new FormControl();
+  answerControl = new FormControl();
   
   customerModel = new Customer(
     this.emailControl.value,'',this.firstNameControl.value,this.lastNameControl.value,this.companyNameControl.value,

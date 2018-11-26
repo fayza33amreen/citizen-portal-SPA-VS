@@ -10,7 +10,6 @@ import { map } from 'rxjs/operators';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit{
-  public imagePath: string = "../../assets/images/logo.svg";
 
   constructor() { }
 

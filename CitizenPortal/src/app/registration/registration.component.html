@@ -1,19 +1,17 @@
 <app-navbar></app-navbar>
 
 <div class="grid-container">
-  <p>Fields required for input are marked with <span style="color: red">*required</span></p>
+  <p>Fields required for input are marked with <span style="color: red">*</span></p>
   <mat-card>
     <mat-card-header>
-      <mat-toolbar class="header-title">New Customer Sign-Up</mat-toolbar>
+      <mat-toolbar class="header-title"><i class="fa fa-user-plus fa-fw " style="font-size:16px; margin-right:4px"></i>  New Customer Sign-Up</mat-toolbar>
     </mat-card-header>
     <mat-card-content class="dashboard-card-content">
-
-      <form form [formGroup]="regiForm" (ngSubmit)="onFormSubmit(regiForm.value)"></form>
-
+      <!--<form form [formGroup]="regiForm" (ngSubmit)="onFormSubmit(regiForm.value)"></form>-->
       <form #userForm="ngForm" class="form">
         <div>
-          <mat-form-field appearance="outline" class="full-width">
-            <mat-label>Email: <span style="color: red">(required)</span></mat-label>
+          <mat-form-field appearance="outline" class="full-width input-field">
+            <mat-label>Email: <span style="color: red">*</span></mat-label>
             <input matInput placeholder="Email" [(formControl)]="emailControl">
             <mat-error *ngIf="emailControl.hasError('email') && !emailControl.hasError('required')">
               Please enter a valid email address
@@ -21,6 +19,24 @@
             <mat-error *ngIf="emailControl.hasError('required')">
               Email is <strong>required</strong>
             </mat-error>
+          </mat-form-field>
+        </div>
+        <div style="clear:both;"></div>
+        <div>
+          <mat-form-field appearance="outline" class="full-width input-field">
+            <mat-label>Confirm Email: <span style="color: red">*</span></mat-label>
+            <input matInput placeholder="Email" [(formControl)]="emailControl">
+          </mat-form-field>
+        </div>
+        <div style="clear:both;"></div>
+
+        <div>
+          <mat-form-field appearance="outline" class="full-width input-field">
+            <mat-select placeholder="CustomerType" name="customerType" [(formControl)]="customerTypeControl">
+              <mat-option *ngFor="let customerType of customerTypes" value="customerType.index">
+                {{ customerType }}
+              </mat-option>
+            </mat-select>
           </mat-form-field>
         </div>
         <div style="clear:both;"></div>
@@ -45,7 +61,7 @@
         </div>
         <div>
           <mat-form-field appearance="outline" class="full-width">
-            <mat-label>Address: <span style="color: red">(required)</span></mat-label>
+            <mat-label>Address: <span style="color: red">*</span></mat-label>
             <input matInput placeholder="Address" name="address" [(formControl)]="addressControl">
             <mat-error *ngIf="addressControl.hasError('required')">
               Address is <strong>required</strong>
@@ -54,7 +70,7 @@
         </div>
         <div>
           <mat-form-field appearance="outline" class="full-width">
-            <mat-label>City: <span style="color: red">(required)</span></mat-label>
+            <mat-label>City: <span style="color: red">*</span></mat-label>
             <input matInput placeholder="City" name="city" [(formControl)]="cityControl">
             <mat-error *ngIf="cityControl.hasError('required')">
               City is <strong>required</strong>
@@ -63,7 +79,7 @@
         </div>
         <div>
           <mat-form-field appearance="outline" class="full-width">
-            <mat-label>Province: <span style="color: red">(required)</span></mat-label>
+            <mat-label>Province: <span style="color: red">*</span></mat-label>
             <input matInput placeholder="Province" name="province" [(formControl)]="provinceControl">
             <mat-error *ngIf="provinceControl.hasError('required')">
               Province is <strong>required</strong>
@@ -72,7 +88,7 @@
         </div>
         <div>
           <mat-form-field appearance="outline" class="full-width">
-            <mat-label>Postal: <span style="color: red">(required)</span></mat-label>
+            <mat-label>Postal: <span style="color: red">*</span></mat-label>
             <input matInput placeholder="Postal" name="postal" [(formControl)]="postalControl">
             <mat-error *ngIf="postalControl.hasError('required')">
               Postal is <strong>required</strong>
@@ -81,7 +97,7 @@
         </div>
         <div class="left">
           <mat-form-field appearance="outline" class="float-input">
-            <mat-label>Phone1: <span style="color: red">(required)</span></mat-label>
+            <mat-label>Phone1: <span style="color: red">*</span></mat-label>
             <input matInput placeholder="Phone1" name="phone1" [(formControl)]="phone1Control">
             <mat-error *ngIf="phone1Control.hasError('required')">
               Phone 1 is <strong>required</strong>
@@ -121,7 +137,6 @@
           <mat-form-field appearance="outline" class="float-input">
             <mat-label>Phone3:</mat-label>
             <input matInput placeholder="Phone3" [(formControl)]="phone3Control">
-
           </mat-form-field>
         </div>
         <div class="right">
@@ -134,9 +149,28 @@
           </mat-form-field>
         </div>
         <div style="clear:both;"></div>
+        <div class="left">
+          <mat-form-field appearance="outline" class="float-input">
+            <mat-select placeholder="Security Question" name="securityQuestions" [(formControl)]="securityQuestionControl">
+              <mat-option *ngFor="let securityQuestion of securityQuestions" value="securityQuestion.index">
+                {{ securityQuestion }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="right">
+          <mat-form-field appearance="outline" class="float-input">
+            <mat-label>Answer: <span style="color: red">*</span></mat-label>
+            <input matInput placeholder="Answer" [(formControl)]="answerControl">
+          </mat-form-field>
+        </div>
+        <div style="clear:both;"></div>
         <br>
-        <button mat-stroked-button [disabled]='userForm.form.invalid' style="margin-right:2%" color="primary" (click)="openDialog()">Sign Up</button>
-        <button mat-stroked-button>Cancel</button>
+        <button mat-stroked-button [disabled]='userForm.form.invalid' style="margin-right:2%" color="primary"
+                (click)="openDialog()">
+          <i class="fa fa-sign-in fa-fw"></i>Sign Up
+        </button>
+        <button mat-stroked-button><i class="fa fa-close fa-fw" style="margin-bottom:3px"></i>Cancel</button>
       </form>
     </mat-card-content>
   </mat-card>

@@ -1,11 +1,9 @@
 .grid-container {
-  margin: 20px;
+  /*margin-top: 20px;*/
   width: 95%;
   margin: 0 auto;
-  margin-top: 2em;
-  padding-top: 2em;
-  height: 80%;
-  background-color: white;
+  /*height: 80%;*/
+  background-color: transparent;
 }
 
 .login-card {
