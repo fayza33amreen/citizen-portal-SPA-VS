@@ -8,15 +8,15 @@
     </mat-card-header>
     <mat-card-content class="dashboard-card-content">
       <!--<form form [formGroup]="regiForm" (ngSubmit)="onFormSubmit(regiForm.value)"></form>-->
-      <form #userForm="ngForm" class="form">
+      <form [formGroup]="regiForm" class="form">
         <div>
           <mat-form-field appearance="outline" class="full-width input-field">
             <mat-label>Email: <span style="color: red">*</span></mat-label>
-            <input matInput placeholder="Email" [(formControl)]="emailControl">
-            <mat-error *ngIf="emailControl.hasError('email') && !emailControl.hasError('required')">
+            <input matInput placeholder="Email" formControlName="emailControl" autocomplete="on">
+            <mat-error *ngIf="regiForm.controls['emailControl'].invalid && regiForm.controls['emailControl'].untouched">
               Please enter a valid email address
             </mat-error>
-            <mat-error *ngIf="emailControl.hasError('required')">
+            <mat-error *ngIf="regiForm.controls['emailControl'].touched">
               Email is <strong>required</strong>
             </mat-error>
           </mat-form-field>
@@ -25,14 +25,15 @@
         <div>
           <mat-form-field appearance="outline" class="full-width input-field">
             <mat-label>Confirm Email: <span style="color: red">*</span></mat-label>
-            <input matInput placeholder="Email" [(formControl)]="emailControl">
+            <input matInput placeholder="Email" formControlName="emailControl">
           </mat-form-field>
         </div>
         <div style="clear:both;"></div>
 
         <div>
           <mat-form-field appearance="outline" class="full-width input-field">
-            <mat-select placeholder="CustomerType" name="customerType" [(formControl)]="customerTypeControl">
+            <mat-label>Customer Type: <span style="color: red">*</span></mat-label>
+            <mat-select placeholder="Customer Type" name="customerType" formControlName="customerTypeControl">
               <mat-option *ngFor="let customerType of customerTypes" value="customerType.index">
                 {{ customerType }}
               </mat-option>
@@ -43,27 +44,27 @@
         <div class="left">
           <mat-form-field appearance="outline" class="float-input">
             <mat-label>First Name:</mat-label>
-            <input matInput placeholder="First Name" name="firstName" [(formControl)]="firstNameControl">
+            <input matInput placeholder="First Name" name="firstName" formControlName="firstNameControl">
           </mat-form-field>
         </div>
         <div class="right">
           <mat-form-field appearance="outline" class="float-input">
             <mat-label>Last Name:</mat-label>
-            <input matInput placeholder="Last Name" name="lastName" [(formControl)]="lastNameControl">
+            <input matInput placeholder="Last Name" name="lastName" formControlName="lastNameControl">
           </mat-form-field>
         </div>
         <div style="clear:both;"></div>
         <div>
           <mat-form-field appearance="outline" class="full-width">
             <mat-label>Company Name:</mat-label>
-            <input matInput placeholder="Company Name" name="companyName" [(formControl)]="companyNameControl">
+            <input matInput placeholder="Company Name" name="companyName" formControlName="companyNameControl">
           </mat-form-field>
         </div>
         <div>
           <mat-form-field appearance="outline" class="full-width">
             <mat-label>Address: <span style="color: red">*</span></mat-label>
-            <input matInput placeholder="Address" name="address" [(formControl)]="addressControl">
-            <mat-error *ngIf="addressControl.hasError('required')">
+            <input matInput placeholder="Address" name="address" formControlName="addressControl">
+            <mat-error *ngIf="regiForm.controls['addressControl'].touched">
               Address is <strong>required</strong>
             </mat-error>
           </mat-form-field>
@@ -71,8 +72,8 @@
         <div>
           <mat-form-field appearance="outline" class="full-width">
             <mat-label>City: <span style="color: red">*</span></mat-label>
-            <input matInput placeholder="City" name="city" [(formControl)]="cityControl">
-            <mat-error *ngIf="cityControl.hasError('required')">
+            <input matInput placeholder="City" name="city" formControlName="cityControl">
+            <mat-error *ngIf="regiForm.controls['cityControl'].touched">
               City is <strong>required</strong>
             </mat-error>
           </mat-form-field>
@@ -80,8 +81,8 @@
         <div>
           <mat-form-field appearance="outline" class="full-width">
             <mat-label>Province: <span style="color: red">*</span></mat-label>
-            <input matInput placeholder="Province" name="province" [(formControl)]="provinceControl">
-            <mat-error *ngIf="provinceControl.hasError('required')">
+            <input matInput placeholder="Province" name="province" formControlName="provinceControl">
+            <mat-error *ngIf="regiForm.controls['provinceControl'].touched">
               Province is <strong>required</strong>
             </mat-error>
           </mat-form-field>
@@ -89,29 +90,30 @@
         <div>
           <mat-form-field appearance="outline" class="full-width">
             <mat-label>Postal: <span style="color: red">*</span></mat-label>
-            <input matInput placeholder="Postal" name="postal" [(formControl)]="postalControl">
-            <mat-error *ngIf="postalControl.hasError('required')">
+            <input matInput placeholder="Postal" name="postal" formControlName="postalControl">
+            <mat-error *ngIf="regiForm.controls['postalControl'].touched">
               Postal is <strong>required</strong>
             </mat-error>
           </mat-form-field>
         </div>
         <div class="left">
           <mat-form-field appearance="outline" class="float-input">
-            <mat-label>Phone1: <span style="color: red">*</span></mat-label>
-            <input matInput placeholder="Phone1" name="phone1" [(formControl)]="phone1Control">
-            <mat-error *ngIf="phone1Control.hasError('required')">
+            <mat-label>Phone 1: <span style="color: red">*</span></mat-label>
+            <input matInput placeholder="Phone 1" name="phone1" formControlName="phone1Control">
+            <mat-error *ngIf="regiForm.controls['phone1Control'].touched">
               Phone 1 is <strong>required</strong>
             </mat-error>
           </mat-form-field>
         </div>
         <div class="right">
           <mat-form-field appearance="outline" class="float-input">
-            <mat-select placeholder="Phone1 Type" name="phone1Type" [(formControl)]="phone1TypeControl">
+            <mat-label>Phone 1 Type: <span style="color: red">*</span></mat-label>
+            <mat-select placeholder="Phone 1 Type" name="phone1Type" formControlName="phone1TypeControl">
               <mat-option *ngFor="let phoneType of phoneTypes" value="phoneType.index">
                 {{ phoneType }}
               </mat-option>
             </mat-select>
-            <mat-error *ngIf="phone1TypeControl.hasError('required')">
+            <mat-error *ngIf="regiForm.controls['phone1TypeControl'].touched">
               Phone 1 Type is <strong>required</strong>
             </mat-error>
           </mat-form-field>
@@ -119,13 +121,14 @@
         <div style="clear:both;"></div>
         <div class="left">
           <mat-form-field appearance="outline" class="float-input">
-            <mat-label>Phone2:</mat-label>
-            <input matInput placeholder="Phone2" [(formControl)]="phone2Control">
+            <mat-label>Phone 2:</mat-label>
+            <input matInput placeholder="Phone2" formControlName="phone2Control">
           </mat-form-field>
         </div>
         <div class="right">
           <mat-form-field appearance="outline" class="float-input">
-            <mat-select placeholder="Phone2 Type" name="phone2Type" [(formControl)]="phone2TypeControl">
+            <mat-label>Phone 2 Type</mat-label>
+            <mat-select placeholder="Phone 2 Type" name="phone2Type" formControlName="phone2TypeControl">
               <mat-option *ngFor="let phoneType of phoneTypes" value="phoneType.index">
                 {{ phoneType }}
               </mat-option>
@@ -135,13 +138,14 @@
         <div style="clear:both;"></div>
         <div class="left">
           <mat-form-field appearance="outline" class="float-input">
-            <mat-label>Phone3:</mat-label>
-            <input matInput placeholder="Phone3" [(formControl)]="phone3Control">
+            <mat-label>Phone 3:</mat-label>
+            <input matInput placeholder="Phone3" formControlName="phone3Control">
           </mat-form-field>
         </div>
         <div class="right">
           <mat-form-field appearance="outline" class="float-input">
-            <mat-select placeholder="Phone3 Type" name="phone3Type" [(formControl)]="phone3TypeControl">
+            <mat-label>Phone 3 Type</mat-label>
+            <mat-select placeholder="Phone3 Type" name="phone3Type" formControlName="phone3TypeControl">
               <mat-option *ngFor="let phoneType of phoneTypes" value="phoneType.index">
                 {{ phoneType }}
               </mat-option>
@@ -151,23 +155,29 @@
         <div style="clear:both;"></div>
         <div class="left">
           <mat-form-field appearance="outline" class="float-input">
-            <mat-select placeholder="Security Question" name="securityQuestions" [(formControl)]="securityQuestionControl">
+            <mat-label>Security Question: <span style="color: red">*</span></mat-label>
+            <mat-select placeholder="Security Question" name="securityQuestions" formControlName="securityQuestionControl">
               <mat-option *ngFor="let securityQuestion of securityQuestions" value="securityQuestion.index">
                 {{ securityQuestion }}
               </mat-option>
             </mat-select>
+            <mat-error *ngIf="regiForm.controls['securityQuestionControl'].touched">
+              Security Question is <strong>required</strong>
+            </mat-error>
           </mat-form-field>
         </div>
         <div class="right">
           <mat-form-field appearance="outline" class="float-input">
             <mat-label>Answer: <span style="color: red">*</span></mat-label>
-            <input matInput placeholder="Answer" [(formControl)]="answerControl">
+            <input matInput placeholder="Answer" formControlName="answerControl">
+            <mat-error *ngIf="regiForm.controls['answerControl'].touched">
+              Answer is <strong>required</strong>
+            </mat-error>
           </mat-form-field>
         </div>
         <div style="clear:both;"></div>
         <br>
-        <button mat-stroked-button [disabled]='userForm.form.invalid' style="margin-right:2%" color="primary"
-                (click)="openDialog()">
+        <button mat-stroked-button [disabled]='regiForm.invalid' style="margin-right:2%" color="primary">
           <i class="fa fa-sign-in fa-fw"></i>Sign Up
         </button>
         <button mat-stroked-button><i class="fa fa-close fa-fw" style="margin-bottom:3px"></i>Cancel</button>
