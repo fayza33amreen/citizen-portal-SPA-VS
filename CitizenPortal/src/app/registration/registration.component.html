@@ -13,12 +13,14 @@
           <mat-form-field appearance="outline" class="full-width input-field">
             <mat-label>Email: <span style="color: red">*</span></mat-label>
             <input matInput placeholder="Email" formControlName="emailControl" autocomplete="on">
-            <mat-error *ngIf="regiForm.controls['emailControl'].invalid && regiForm.controls['emailControl'].untouched">
+            <mat-error *ngIf="regiForm.controls['emailControl'].dirty && regiForm.controls['emailControl'].invalid; else error">
               Please enter a valid email address
             </mat-error>
-            <mat-error *ngIf="regiForm.controls['emailControl'].touched">
-              Email is <strong>required</strong>
-            </mat-error>
+            <ng-template #error>
+              <mat-error>
+                Email is <strong>required</strong>
+              </mat-error>
+            </ng-template>
           </mat-form-field>
         </div>
         <div style="clear:both;"></div>
@@ -38,6 +40,9 @@
                 {{ customerType }}
               </mat-option>
             </mat-select>
+            <mat-error *ngIf="regiForm.controls['customerTypeControl'].touched">
+              Customer Type is <strong>required</strong>
+            </mat-error>
           </mat-form-field>
         </div>
         <div style="clear:both;"></div>
